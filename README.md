@@ -25,7 +25,7 @@ The model is first trained on the PXD068184 development cohort and then evaluate
 ## Framework Architecture
 
 <p align="center">
-  <img src="assets/images/framework_architecture.png" width="850" alt="Overall architecture of the proposed tear-proteomic Parkinson's disease spectrum framework">
+  <img src="figures/framework_architecture.png" width="850" alt="Overall architecture of the proposed tear-proteomic Parkinson's disease spectrum framework">
 </p>
 
 The architecture integrates preprocessing, PrimeKG-guided molecular information, shared representation learning, cross-center domain adaptation, LoRA-based refinement, and independent external validation.
@@ -35,7 +35,7 @@ The architecture integrates preprocessing, PrimeKG-guided molecular information,
 ## End-to-End Experimental Pipeline
 
 <p align="center">
-  <img src="assets/images/experimental_pipeline.png" width="900" alt="End-to-end experimental pipeline for tear-proteomic Parkinson's disease spectrum modeling">
+  <img src="figures/experimental_pipeline.png" width="900" alt="End-to-end experimental pipeline for tear-proteomic Parkinson's disease spectrum modeling">
 </p>
 
 The complete experimental workflow separates model development from the external evaluation stage to reduce information leakage and provide a stricter test of transportability.
@@ -141,7 +141,7 @@ Only LoRA adapter parameters are optimized:
 ### Independent External Validation
 
 <p align="center">
-  <img src="assets/images/external_validation_performance.png" width="760" alt="Independent external validation performance on PXD028811">
+  <img src="figures/external_validation_performance.png" width="760" alt="Independent external validation performance on PXD028811">
 </p>
 
 | Metric | External Performance |
@@ -163,7 +163,7 @@ The model correctly classified **48 of 54 external participants**.
 ## External Confusion Matrix
 
 <p align="center">
-  <img src="assets/images/external_confusion_matrix.png" width="650" alt="External confusion matrix for PXD028811">
+  <img src="figures/external_confusion_matrix.png" width="650" alt="External confusion matrix for PXD028811">
 </p>
 
 The external evaluation produced:
@@ -190,8 +190,8 @@ The external evaluation produced:
 ## Installation
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-cd <YOUR_REPOSITORY_NAME>
+git clone https://github.com/machinelearning1910-cpu/parkinson-by-tears.git
+cd parkinson-by-tears
 python -m venv .venv
 ```
 
@@ -233,25 +233,22 @@ The experiments described in the paper were conducted using:
 
 ---
 
-## Recommended Repository Structure
+## Repository Structure
 
 ```text
 .
 ├── README.md
 ├── requirements.txt
-├── assets/
-│   └── images/
-│       ├── framework_architecture.png
-│       ├── experimental_pipeline.png
-│       ├── external_validation_performance.png
-│       └── external_confusion_matrix.png
-├── data/
-├── notebooks/
-├── src/
-└── results/
+├── figures/
+│   ├── framework_architecture.png
+│   ├── experimental_pipeline.png
+│   ├── external_validation_performance.png
+│   └── external_confusion_matrix.png
+├── Results/
+├── PARKINSONS _dataset_download_and_audit.py
+├── PARKINSONS _methodology_training.py
+└── PARKINSONS _evaluation_and_results.py
 ```
-
-> Adjust the folder names to match your actual implementation.
 
 ---
 
@@ -267,25 +264,27 @@ To preserve the leakage-controlled design described in the study:
 
 ---
 
-## Suggested README Figures
+## README Figures
 
-The following paper figures are the most useful for the GitHub README:
+The following figures are used in the GitHub README:
 
-| Paper Figure | Recommended README File | Why Include It? |
+| Paper Figure | Repository File | Why Include It? |
 |---|---|---|
-| **Figure 1** | `assets/images/framework_architecture.png` | Best high-level overview of the proposed method |
-| **Figure 2** | `assets/images/experimental_pipeline.png` | Shows the complete experimental workflow |
-| **Figure 18** | `assets/images/external_validation_performance.png` | Summarizes the independent external results |
-| **Figure 19** | `assets/images/external_confusion_matrix.png` | Shows class-level external prediction behavior |
+| **Figure 1** | `figures/framework_architecture.png` | Best high-level overview of the proposed method |
+| **Figure 2** | `figures/experimental_pipeline.png` | Shows the complete experimental workflow |
+| **Figure 18** | `figures/external_validation_performance.png` | Summarizes the independent external results |
+| **Figure 19** | `figures/external_confusion_matrix.png` | Shows class-level external prediction behavior |
 
 ### Optional Figures
 
-- **Figure 3** -> `assets/images/cohort_distribution.png`
-- **Figure 13** -> `assets/images/lora_parameter_efficiency.png`
-- **Figure 15** -> `assets/images/lora_auroc_training.png`
-- **Figure 16** -> `assets/images/lora_auprc_training.png`
+If you later upload additional figures to the same `figures/` folder, you can also include:
 
-For a clean GitHub page, the main README should preferably use only Figures **1, 2, 18, and 19**.
+- **Figure 3** -> `figures/cohort_distribution.png`
+- **Figure 13** -> `figures/lora_parameter_efficiency.png`
+- **Figure 15** -> `figures/lora_auroc_training.png`
+- **Figure 16** -> `figures/lora_auprc_training.png`
+
+For a clean GitHub page, the main README preferably uses only Figures **1, 2, 18, and 19**.
 
 ---
 
